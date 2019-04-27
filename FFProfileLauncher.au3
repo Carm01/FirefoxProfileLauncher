@@ -6,9 +6,9 @@
 #AutoIt3Wrapper_UseX64=y
 #AutoIt3Wrapper_Res_Comment=Will Launch Different Firefox Profiles
 #AutoIt3Wrapper_Res_Description=Will Launch Different Firefox Profiles
-#AutoIt3Wrapper_Res_Fileversion=1.1.0.0
+#AutoIt3Wrapper_Res_Fileversion=1.2.0.0
 #AutoIt3Wrapper_Res_ProductName=Firefox Profiles
-#AutoIt3Wrapper_Res_ProductVersion=1.1.0.0
+#AutoIt3Wrapper_Res_ProductVersion=1.2.0.0
 #AutoIt3Wrapper_Res_LegalCopyright=Carm01
 #AutoIt3Wrapper_Res_Language=1033
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
@@ -63,13 +63,17 @@ Func menu()
 	GUISetState(@SW_SHOW, $hGUI)
 	GUISetFont(8.5, 700)
 
-	Local $firefoxProfilepick = GUICtrlCreateCombo('', 10 * $zm, 10 * $zm, 210 * $zm, 18 * $zm)
-	Local $firefoxversion = GUICtrlCreateCombo('', 10 * $zm, 40 * $zm, 210 * $zm, 18 * $zm)
+	Local $firefoxProfilepick = GUICtrlCreateCombo('', 10 * $zm, 10 * $zm, 180 * $zm, 18 * $zm)
+	GUICtrlCreateLabel('Profile', 200 * $zm, 13 * $zm, 210 * $zm, 18 * $zm)
+	setfontWhite()
+	Local $firefoxversion = GUICtrlCreateCombo('', 10 * $zm, 40 * $zm, 180 * $zm, 18 * $zm)
+	GUICtrlCreateLabel('Firefox Edition', 200 * $zm, 43 * $zm, 210 * $zm, 18 * $zm)
+	setfontWhite()
 	$PrivateMode = GUICtrlCreateCheckbox("Launch in Provate Prowsing", 10 * $zm, 70 * $zm, 210 * $zm, 18 * $zm)
 
 	setfontWhite()
-	GUICtrlSetData($firefoxProfilepick, $listData, 'select'); sets data for profiles in pulldown
-	GUICtrlSetData($firefoxversion, $listData1, 'select'); sets data for versions in pulldown
+	GUICtrlSetData($firefoxProfilepick, $listData, 'select') ; sets data for profiles in pulldown
+	GUICtrlSetData($firefoxversion, $listData1, 'select') ; sets data for versions in pulldown
 	$saveSettingsAW = GUICtrlCreateButton("Launch Profile", 10 * $zm, 100 * $zm, 100 * $zm, 22 * $zm)
 	$FFProfileMgr = GUICtrlCreateButton("Profile Manager", 120 * $zm, 100 * $zm, 100 * $zm, 22 * $zm)
 	GUICtrlCreateLabel('Press the [X] in upper right to exit', 10 * $zm, 130 * $zm, 300 * $zm, 15 * $zm)     ; 4.2.1.0 change of wording
@@ -101,6 +105,13 @@ Func menu()
 				EndIf
 				#EndRegion Executes specific installation
 			Case $FFProfileMgr
+				$firefoxversionSelect = GUICtrlRead($firefoxversion)
+				If $firefoxversionSelect <> "" Then
+					$FirefoxVersionPath = '"C:\Program Files\' & $firefoxversionSelect & '\firefox.exe"'
+				Else
+					MsgBox(262160, 'ID10T', 'Please Choose a Firefox version')
+					ContinueCase
+				EndIf
 				#Region Handles the profile manager
 				If ProcessExists('firefox.exe') Then
 					$get = MsgBox(262193, "Danger Will Robinson !", "All instances of Firefox must be closed in order to manage your profiles" & @CRLF & @CRLF & 'Pressing "Ok" will force close all Firefox Instances and launch the default profile manager' & @CRLF & @CRLF & 'You can always choose "Cancel" and manually close Firefox')
@@ -111,12 +122,14 @@ Func menu()
 								Sleep(100)
 							Until Not ProcessExists('firefox.exe')
 						EndIf
+
 						ShellExecute($FirefoxVersionPath, ' -p', "", '')
 						GUISetState(@SW_MINIMIZE, $hGUI)
 					ElseIf $get = 2 Then
 						ContinueCase
 					EndIf
 				Else
+
 					ShellExecute($FirefoxVersionPath, ' -p', "", '')
 					GUISetState(@SW_MINIMIZE, $hGUI)
 				EndIf
