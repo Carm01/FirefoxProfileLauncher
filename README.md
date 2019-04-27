@@ -12,3 +12,5 @@ Private Browsing is available as well.
 This tool will not currently support multiple PC users meaning different users login into the PC due to permissions.
 
 This is an AutoIT application. The source code is available here too and you must install AutoIT and the script editor to compile it. All you need to do is download the zip, then extract the folder and compile with AutoIT all the files are there.
+
+<img src="https://raw.githubusercontent.com/Carm01/FirefoxProfileLauncher/images/main.png">
