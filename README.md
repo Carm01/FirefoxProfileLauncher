@@ -10,6 +10,7 @@ _You can also not launch the same profile more then once per Firefox edition. Me
 ___Please note that if you are using the same profile with multiple Firefox edition, I cannot predict how they will interact with each other.___
 
 Private Browsing is available as well.
+Minimizing the app will place it in the system tray.
 
 This tool will not currently support multiple PC users meaning different users login into the PC due to permissions.
 
