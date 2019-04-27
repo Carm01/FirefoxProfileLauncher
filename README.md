@@ -1,7 +1,7 @@
 # Firefox Profile launcher
 If you have multiple Firefox Profiles, this small application will allow you to select which profile to launch with whatever version of Firefox you want in a separate window(process)
 
-__This currently applies to only64 bit windows installs where the Firefox.exe is located:__
+__This currently applies to only 64 bit windows installs where the Firefox.exe is located:__
 "C:\Program Files\"
 
 You can select different Firefox edition installed with different Firefox profiles. _Launching Developer edition of Firefox with a __"release"__ version Profile might not work as it did not work for me._ _This is unpreventable_. 
