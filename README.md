@@ -1,10 +1,11 @@
 # Firefox Profile launcher
-If you have multiple Firefox Profiles, this small application will allow you to select which profile to launch with whatever version of Firefox you want. __You cannot launch the same profile in the same installation more than once__
+If you have multiple Firefox Profiles, this small application will allow you to select which profile to launch with whatever version of Firefox you want.
 
 __This currently applies to only64 bit windows installs where the Firefox.exe is located:__
 "C:\Program Files\"
 
-You can select different Firefox versions installed with different Firefox profiles. _Launching Developer edition of Firefox with a __"release"__ version Profile might not work as it did not work for me. _This is unpreventable_. _ You can also not launch the same profile more then once per Firefox edition. Meaning that you cannot launch profile1 in release 
+You can select different Firefox versions installed with different Firefox profiles. _Launching Developer edition of Firefox with a __"release"__ version Profile might not work as it did not work for me. _This is unpreventable_. 
+_You can also not launch the same profile more then once per Firefox edition. Meaning that you cannot launch profile1 in release more than once._
 
 Private Browsing is available as well.
 
