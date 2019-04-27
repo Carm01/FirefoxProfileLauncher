@@ -6,9 +6,9 @@
 #AutoIt3Wrapper_UseX64=y
 #AutoIt3Wrapper_Res_Comment=Will Launch Different Firefox Profiles
 #AutoIt3Wrapper_Res_Description=Will Launch Different Firefox Profiles
-#AutoIt3Wrapper_Res_Fileversion=1.2.0.0
+#AutoIt3Wrapper_Res_Fileversion=1.2.0.1
 #AutoIt3Wrapper_Res_ProductName=Firefox Profiles
-#AutoIt3Wrapper_Res_ProductVersion=1.2.0.0
+#AutoIt3Wrapper_Res_ProductVersion=1.2.0.1
 #AutoIt3Wrapper_Res_LegalCopyright=Carm01
 #AutoIt3Wrapper_Res_Language=1033
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
@@ -58,7 +58,8 @@ menu()
 
 Func menu()
 
-	Local $hGUI = GUICreate("Firefox Profile Launcher", 290 * $zm, 150 * $zm, -1, -1, BitOR($WS_SYSMENU, $WS_CAPTION, $WS_MINIMIZEBOX, $DS_SETFOREGROUND), $WS_EX_TOPMOST)
+	Local $hGUI = GUICreate("Firefox Profile Launcher", 290 * $zm, 150 * $zm, -1, -1, BitOR($WS_CAPTION, $WS_POPUP, $WS_SYSMENU, $WS_MINIMIZEBOX), $WS_EX_TOPMOST)
+
 	GUISetBkColor($rr)
 	GUISetState(@SW_SHOW, $hGUI)
 	GUISetFont(8.5, 700)
@@ -69,7 +70,7 @@ Func menu()
 	Local $firefoxversion = GUICtrlCreateCombo('', 10 * $zm, 40 * $zm, 180 * $zm, 18 * $zm)
 	GUICtrlCreateLabel('Firefox Edition', 200 * $zm, 43 * $zm, 210 * $zm, 18 * $zm)
 	setfontWhite()
-	$PrivateMode = GUICtrlCreateCheckbox("Launch in Provate Prowsing", 10 * $zm, 70 * $zm, 210 * $zm, 18 * $zm)
+	$PrivateMode = GUICtrlCreateCheckbox("Launch in Private Prowsing", 10 * $zm, 70 * $zm, 210 * $zm, 18 * $zm)
 
 	setfontWhite()
 	GUICtrlSetData($firefoxProfilepick, $listData, 'select') ; sets data for profiles in pulldown
