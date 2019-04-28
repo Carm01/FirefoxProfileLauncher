@@ -6,9 +6,9 @@
 #AutoIt3Wrapper_UseX64=y
 #AutoIt3Wrapper_Res_Comment=Will Launch Different Firefox Profiles
 #AutoIt3Wrapper_Res_Description=Will Launch Different Firefox Profiles
-#AutoIt3Wrapper_Res_Fileversion=1.2.0.1
+#AutoIt3Wrapper_Res_Fileversion=1.2.0.2
 #AutoIt3Wrapper_Res_ProductName=Firefox Profiles
-#AutoIt3Wrapper_Res_ProductVersion=1.2.0.1
+#AutoIt3Wrapper_Res_ProductVersion=1.2.0.2
 #AutoIt3Wrapper_Res_LegalCopyright=Carm01
 #AutoIt3Wrapper_Res_Language=1033
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
@@ -94,7 +94,7 @@ Func menu()
 				$FirefoxVersionPath = '"C:\Program Files\' & $firefoxversionSelect & '\firefox.exe"'
 				#Region checks to see if Private browsing is selected
 				If _IsChecked($PrivateMode) Then ; checks to see if Private browsing is selected
-					$x = $FirefoxVersionPath & ' -no-remote -private -p ' & $firefoxSelect
+					$x = $FirefoxVersionPath & ' -no-remote -private-window -p ' & $firefoxSelect
 				Else
 					$x = $FirefoxVersionPath & ' -no-remote -p ' & $firefoxSelect
 				EndIf
