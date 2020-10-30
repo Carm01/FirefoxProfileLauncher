@@ -1,4 +1,4 @@
-# Firefox Profile launcher
+# Firefox Profile Manager launcher
 If you have multiple Firefox Profiles, this small application will allow you to select which profile to launch with whatever version of Firefox you want in a separate window(process)
 
 __This currently applies to only 64 bit windows installs where the Firefox.exe is located:__
